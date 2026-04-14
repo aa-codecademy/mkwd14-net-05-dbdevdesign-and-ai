@@ -2,4 +2,4 @@
 
 ## Contact
 
-* Trainer: trainer@mail.com
+* Trainer: risto.panchevski@gmail.com
