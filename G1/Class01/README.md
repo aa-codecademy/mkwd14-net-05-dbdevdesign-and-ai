@@ -415,11 +415,11 @@ Insert sample data.
 Create a database called SEDCACADEMYDB.
 
 Create the following tables:
-- Students
-- Teachers
-- Grades
-- Courses
-- AchievementTypes
+- Student
+- Teacher
+- Grade
+- Course
+- AchievementType
 - GradeDetails
 
 ![Homework](../img/homework.png)
