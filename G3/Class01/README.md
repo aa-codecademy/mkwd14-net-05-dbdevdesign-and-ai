@@ -412,7 +412,7 @@ Insert sample data.
 
 ## Homework
 
-Create a database called SEDCACADEMYDB.
+Create a database called AvengaAcademyDB.
 
 Create the following tables:
 - Students
