@@ -96,3 +96,4 @@ create table BusinessEntities (
 constraint [PK_BusinessEntity] primary key (Id)
 )
 
+go
