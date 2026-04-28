@@ -3,6 +3,8 @@
 ## Agenda
 
 - Designing Databases
+- Database Relationships
+- SQL Implementation
 - Workshop (Hands-on)
 
 ---
@@ -12,11 +14,12 @@
 ### Steps of Designing a Database
 
 1. Determine the purpose of your database  
-2. Find and organize the information required  
+2. Find and organize the required information  
 3. Divide the information into tables  
 4. Turn information items into columns  
 5. Specify primary keys  
-6. Set up the table relationships  
+6. Set up relationships between tables  
+7. Normalize the database (avoid duplication)
 
 ---
 
@@ -24,86 +27,66 @@
 
 ### 🎯 Goal
 
-Design a **Pizza Ordering Application Database**
+Design and implement a **Pizza Ordering Application Database**
+
+The system should support:
+
+- Users placing orders
+- Ordering multiple pizzas
+- Adding multiple toppings per pizza
+- Pizza sizes
+- Delivered / Undlevered orders
+- Reporting using Views and Functions
 
 ---
 
-## System Requirements
+# System Requirements
 
 The database should include the following entities:
 
-- Users  
-- Pizzas  
-- Orders  
-- Pizza Sizes  
-- Toppings  
+- Users
+- Pizzas
+- Pizza Sizes
+- Toppings
+- Orders
+- Order Details
+- Order Detail Toppings
+
+Optional (Advanced):
+- Pizza Toppings (default pizza recipe)
 
 ---
 
-## 👤 User Requirements
+# Important Technical Requirements
 
-A user can have **multiple orders**
+## Table Rules
 
-### Information:
-- First Name  
-- Last Name  
-- Address  
-- Phone  
+### Every table must have:
 
----
+```sql
+Id INT IDENTITY(1,1) PRIMARY KEY
+```
 
-## 🍕 Pizza Requirements
-
-A pizza can:
-
-- Have multiple toppings  
-- Have one size  
-- Belong to one order  
-
-### Information:
-- Name  
-- Price (for this pizza)  
-- Size*  
-- Order*  
+declared directly inside the `CREATE TABLE` statement.
 
 ---
 
-## 📦 Order Requirements
+## Foreign Keys Rule
 
-An order can:
+### IMPORTANT:
 
-- Have only one user  
-- Have multiple pizzas  
+All foreign keys must be created later using:
 
-### Information:
-- Is Delivered  
-- Price (delivery price)  
-- User*  
+```sql
+ALTER TABLE
+ADD CONSTRAINT
+FOREIGN KEY
+```
 
----
-
-## 🧀 Topping Requirements
-
-A topping can:
-
-- Be used in multiple pizzas  
-
-### Information:
-- Name  
-- Price  
+NOT inside `CREATE TABLE`
 
 ---
 
-## 📏 Pizza Size Requirements
-
-A pizza size can:
-
-- Be used in multiple pizzas  
-
-### Information:
-- Name  
-
----
 
 ## ⚙️ Extra Requirements
 
@@ -173,8 +156,15 @@ Use AI to:
 
 ---
 
-## Deliverables
+# Deliverables
 
-- Database schema (tables + relationships)  
-- SQL scripts  
-- Implemented extra requirements  
+Students must submit:
+
+- Database schema
+- Relationships explanation
+- CREATE TABLE scripts
+- ALTER TABLE FK scripts
+- INSERT scripts
+- Function implementation
+- Views implementation
+- Test SELECT queries
