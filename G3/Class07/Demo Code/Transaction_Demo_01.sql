@@ -1,0 +1,14 @@
+BEGIN TRANSACTION;
+DECLARE @orderId INT;
+
+INSERT INTO dbo.Orders(UserId, Comment)
+VALUES (2, '/')
+
+SET @orderId = SCOPE_IDENTITY()
+
+INSERT INTO OrderItems (PizzaSizeId, Quantity, OrderId)
+VALUES (1, 3, @orderId)
+
+COMMIT TRANSACTION
+
+ROLLBACK TRANSACTION
