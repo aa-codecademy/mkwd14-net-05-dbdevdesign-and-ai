@@ -50,6 +50,7 @@ GO
 -- ===> Calling usp_GetEmployeeById
 EXEC usp_GetEmployeeById 10
 EXEC usp_GetEmployeeById @EmployeeId = 20
+GO
 
 --EXEC usp_GetEmployeeById 10, 30 -- ERROR! Too many arguments
 
